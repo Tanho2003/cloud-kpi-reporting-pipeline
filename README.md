@@ -98,18 +98,20 @@ See: \`docs/Data\_Dictionary.md\`
 \- Delivered orders: 96,478  
 \- Delivered revenue (SUM(payment\_total)): 15,422,605.23 BRL
 
-\#\# Power BI Dashboard  
-\#\#\# Month  
-\!\[Dashboard \- Month\](assets/dashboard_months.png)
+## Power BI Dashboard
 
-\#\#\# Year  
-\!\[Dashboard \- Year\](assets/dashboard_years.png)
+### Month
+![Dashboard - Month](assets/dashboard_months.png)
 
-\#\#\# Total  
-\!\[Dashboard \- Total\](assets/dashboard_total.png)
+### Year
+![Dashboard - Year](assets/dashboard_years.png)
 
-\#\# Data Model  
-\!\[Model\](assets/model.png)
+### Total
+![Dashboard - Total](assets/dashboard_total.png)
+
+## Data Model
+![Model](assets/model.png)
+
 
 \#\# Repro Steps (Local)  
 1\ Build curated tables (Python notebook):  
