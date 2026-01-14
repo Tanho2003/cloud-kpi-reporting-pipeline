@@ -18,26 +18,26 @@
 - Pipeline status: PASS
 
 ## Check Results (Summary)
-| Check | Table | Rule | Result | Notes |
+| Check | Table | Rule / Threshold | Result | Notes |
 |---|---|---|---|---|
 | Schema | raw | required columns present | PASS | |
-| PK uniqueness | fact_orders | order_id unique | PASS | |
-| Missing | fact_orders | customer_unique_id not null | PASS | 0 nulls |
-| Revenue validity | fact_orders | delivered orders have payment_total | PASS | 1 order patched |
-| PK uniqueness | fact_order_items | (order_id, order_item_id) unique | PASS | |
-| Range | fact_order_items | price >= 0 | PASS | |
-| Range | fact_order_items | freight_value >= 0 | PASS | |
-| Referential integrity | fact_orders → dim_customer | customer_unique_id exists | PASS | 100% |
-| Referential integrity | fact_order_items → dim_product | product_id exists | PASS | 100% |
-| Allocation | fact_order_items | SUM(value_share) ≈ 1 per order | PASS | 100% |
+| PK uniqueness | fact_orders | order_id unique (100%) | PASS | |
+| Missing | fact_orders | customer_unique_id not null (100%) | PASS | 0 nulls |
+| Revenue validity | fact_orders | delivered payment_total present (100%) | PASS | 1 order patched |
+| PK uniqueness | fact_order_items | (order_id, order_item_id) unique (100%) | PASS | |
+| Range | fact_order_items | price >= 0 (0 violations) | PASS | |
+| Range | fact_order_items | freight_value >= 0 (0 violations) | PASS | |
+| Referential integrity | fact_orders → dim_customer | 100% coverage | PASS | 100% |
+| Referential integrity | fact_order_items → dim_product | 100% coverage | PASS | 100% |
+| Allocation sanity | fact_order_items | SUM(share) 0.999–1.001 (>=99.9%) | PASS | 100% |
 
 ## Issues Found + Fixes
-- Issue: 1 delivered order missing payment rows in raw payments table  
-- Fix: patched payment_total using SUM(item price + freight) for that order  
+- Issue: 1 delivered order missing payment rows in raw payments table
+- Fix: patched payment_total using SUM(item price + freight) for that order
 - Impact: 1 order updated; no rows removed
 
 ## Warnings / Monitoring
-- Category translation coverage (EN): 98.11% (623 products missing EN category)
+- Category EN coverage: 98.11% (threshold >= 95%) — PASS (WARNING)
 
 ## Approval
 - Analyst: Tan Ho
