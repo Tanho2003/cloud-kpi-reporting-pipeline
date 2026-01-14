@@ -17,7 +17,7 @@ Raw CSVs (S3) → Data Quality Gate → Curated Star Schema (CSV) → PostgreSQL
 ![S3 Structure](assets/s3_structure.png)
 
 ## KPIs
-See: `docs/KPI_Definitions.md`
+See: `docs/KPI_Definitions.md` (https://github.com/Tanho2003/cloud-kpi-reporting-pipeline/blob/main/docs/KPI_Definitions.md)
 
 ## Data Model (Star Schema)
 Facts:
@@ -29,11 +29,11 @@ Dimensions:
 - dim_customer
 - dim_product
 
-See: `docs/Data_Dictionary.md`
+See: `docs/Data_Dictionary.md` (https://github.com/Tanho2003/cloud-kpi-reporting-pipeline/blob/main/docs/Data_Dictionary.md)
 
 ## Data Quality Checks (Hire-Ready Differentiator)
 - DQ gate enforces schema, PK uniqueness, missing thresholds, range checks, referential integrity, and allocation sanity.
-- Sample report: `reports/data_quality/data_quality_report_2026-01-12.md`
+- Sample report: `reports/data_quality/data_quality_report_2026-01-12.md` (https://github.com/Tanho2003/cloud-kpi-reporting-pipeline/blob/main/reports/data_quality/data_quality_report_2026-01-12.md)
 
 ## Raw → Curated Row Counts (2026-01-12)
 | Layer | Table | Rows |
@@ -71,9 +71,9 @@ See: `docs/Data_Dictionary.md`
 
 ## Repro Steps (Local)
 1) Build curated tables (Python notebook):
-   - `notebooks/06_build_curated.ipynb`
+   - `notebooks/06_build_curated.ipynb` (https://github.com/Tanho2003/cloud-kpi-reporting-pipeline/blob/main/notebooks/06_build_curated.ipynb)
 2) Upload raw + curated outputs to S3:
-   - `raw/olist/2026-01-12/`
+   - `raw/olist/2026-01-12/` 
    - `curated/olist/2026-01-12/`
 3) Load curated CSVs into Postgres (psql):
    - `sql/07_create_tables.sql`
