@@ -50,13 +50,13 @@ See: \`docs/Data\_Dictionary.md\`
 
 \#\# Power BI Dashboard  
 \#\#\# Month  
-\!\[Dashboard \- Month\](assets/dashboard\_months.png)
+\!\[Dashboard \- Month\](assets/dashboard_months.png)
 
 \#\#\# Year  
-\!\[Dashboard \- Year\](assets/dashboard\_years.png)
+\!\[Dashboard \- Year\](assets/dashboard_years.png)
 
 \#\#\# Total  
-\!\[Dashboard \- Total\](assets/dashboard\_total.png)
+\!\[Dashboard \- Total\](assets/dashboard_total.png)
 
 \#\# Data Model  
 \!\[Model\](assets/model.png)
