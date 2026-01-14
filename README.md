@@ -1,4 +1,4 @@
-# Cloud KPI Reporting Pipeline (Raw → Curated → Postgres → Power BI)
+# Cloud KPI Reporting Pipeline (AWS S3 → Curated → Postgres → Power BI)
 
 ## Purpose
 Build a production-style KPI reporting pipeline that ingests raw commerce data, validates data quality, curates clean dimensional tables, loads into PostgreSQL, and powers a Power BI executive dashboard.
@@ -7,7 +7,14 @@ Build a production-style KPI reporting pipeline that ingests raw commerce data, 
 Olist Brazilian E-Commerce Public Dataset (snapshot: 2026-01-12)
 
 ## Architecture
-Raw CSVs → Data Quality Gate → Curated Star Schema (CSV) → PostgreSQL (schema: bi) → Power BI Dashboard
+Raw CSVs (S3) → Data Quality Gate → Curated Star Schema (CSV) → PostgreSQL (schema: bi) → Power BI Dashboard
+
+## AWS S3 Storage (Raw/Bronze → Curated/Silver)
+- s3://cloud-kpi-tanho2003-olist/raw/olist/2026-01-12/
+- s3://cloud-kpi-tanho2003-olist/curated/olist/2026-01-12/
+- s3://cloud-kpi-tanho2003-olist/reports/data_quality/
+
+![S3 Structure](assets/s3_structure.png)
 
 ## KPIs
 See: `docs/KPI_Definitions.md`
@@ -65,10 +72,13 @@ See: `docs/Data_Dictionary.md`
 ## Repro Steps (Local)
 1) Build curated tables (Python notebook):
    - `notebooks/06_build_curated.ipynb`
-2) Load curated CSVs into Postgres (psql):
+2) Upload raw + curated outputs to S3:
+   - `raw/olist/2026-01-12/`
+   - `curated/olist/2026-01-12/`
+3) Load curated CSVs into Postgres (psql):
    - `sql/07_create_tables.sql`
    - `sql/07_load_csv_psql.sql`
-3) Connect Power BI to Postgres database `olist_bi` and build visuals
+4) Connect Power BI to Postgres database `olist_bi` and build visuals
 
 ## Notes / Known Edge Cases
 - 1 delivered order missing payment rows; patched payment_total using SUM(price + freight) and logged in DQ report.
