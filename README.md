@@ -18,6 +18,20 @@ Postgres DB: `olist_bi` | Schema: `bi` (Power BI connects to `pbi.*` views)
 - On-time delivery rate: **91.89%**
 - Postgres validation: **100%** join completeness (orders → customers, items → products)
 
+## Power BI Dashboard
+
+### Month
+![Dashboard - Month](assets/dashboard_months.png)
+
+### Year
+![Dashboard - Year](assets/dashboard_years.png)
+
+### Total
+![Dashboard - Total](assets/dashboard_total.png)
+
+## Data Model
+![Model](assets/model.png)
+
 ## AWS S3 Storage (Raw/Bronze → Curated/Silver)
 - s3://cloud-kpi-tanho2003-olist/raw/olist/2026-01-12/
 - s3://cloud-kpi-tanho2003-olist/curated/olist/2026-01-12/
@@ -88,7 +102,7 @@ $psql = "C:\Program Files\PostgreSQL\18\bin\psql.exe"
 ### 3) Power BI
 Connect Power BI to Postgres database `olist_bi` and load `pbi.*` views.
 
-### 4) (Optional) Upload to S3 (AWS CLI)
+### 4) Upload to S3 (AWS CLI)
 ```bash
 aws s3 sync data/raw/olist/2026-01-12 s3://cloud-kpi-tanho2003-olist/raw/olist/2026-01-12/
 aws s3 sync data/curated/olist/2026-01-12 s3://cloud-kpi-tanho2003-olist/curated/olist/2026-01-12/
