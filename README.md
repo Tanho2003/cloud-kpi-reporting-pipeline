@@ -85,6 +85,7 @@ See: [Data Dictionary](docs/Data_Dictionary.md)
 pip install -r requirements.txt
 # Run the notebook:
 # notebooks/06_build_curated.ipynb
+```
 
 ### 2) Load curated tables into Postgres (Windows)
 ```powershell
