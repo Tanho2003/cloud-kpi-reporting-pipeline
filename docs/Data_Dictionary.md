@@ -1,6 +1,6 @@
 \# Data Dictionary (Curated Layer)
 
-\#\# Curated Tables (Snapshot: 2026-01-12)  
+\#\# Curated Tables (Snapshot: 2026-01-01)  
 \- dim\_date (800 rows)  
 \- dim\_customer (96,096 rows)  
 \- dim\_product (32,951 rows)  

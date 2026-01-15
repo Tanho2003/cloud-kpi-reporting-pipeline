@@ -65,5 +65,5 @@
 \- If NO: list the blocker failures and remediation steps.
 
 \#\# Remediation Notes  
-\- (What you changed / what you’ll fix next run)
+\- (What  changed / what to fix next run)
 

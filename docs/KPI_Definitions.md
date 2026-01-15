@@ -4,7 +4,7 @@
 
 \## Reporting Scope
 
-\- Dataset: Olist Brazilian E-Commerce (snapshot: 2026-01-12)
+\- Dataset: Olist Brazilian E-Commerce (snapshot: 2026-01-01)
 
 \- Currency: BRL (source currency; no FX conversion)
 

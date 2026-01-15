@@ -58,7 +58,7 @@ See: [Data Dictionary](docs/Data_Dictionary.md)
 - DQ gate enforces schema, PK uniqueness, missing thresholds, range checks, referential integrity, and allocation sanity.
 - Sample report: [DQ Report](reports/data_quality/data_quality_report_2026-01-12.md)
 
-## Raw → Curated Row Counts (2026-01-12)
+## Raw → Curated Row Counts (2026-01-01)
 | Layer | Table | Rows |
 |---|---|---:|
 | Raw | orders | 99,441 |
